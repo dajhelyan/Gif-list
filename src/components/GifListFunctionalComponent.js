@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { dogsGifs } from "./gifData";
 import Gif from "./Gif";
 // Funtional component
 // const GifList = () => {
@@ -20,21 +19,14 @@ import Gif from "./Gif";
 
 // Class component
 class GifList extends React.Component{
-  constructor(){
-    super()
-    this.state = {gifs: []}
-  }
+  // constructor(){
+  //   super()
+  // }
 
-  componentDidMount(){
-    this.setState({
-      gifs: dogsGifs.map((gif) => gif.url )
-    })
-  }
-
-  render(){
+    render(){
     return(
       <div>
-       {this.state.gifs.map((url, index) => (
+       {this.props.listGif.map((url, index) => (
          <Gif key={index} url={url} />
        ))}
      </div>
