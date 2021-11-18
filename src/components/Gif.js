@@ -1,11 +1,26 @@
 import React, { useEffect } from "react";
 
-const Gif = (props) => {
-  useEffect(() => {
-    console.log("Render gif ");
-  }, []);
+class Gif extends React.Component{
 
-  return <img src={props.url} />;
-};
+  render(){
+    return (
+      
+        <img src={this.props.url} />
+  
+    );
+  }
+}
+
+// const Gif = (props) => {
+//   useEffect(() => {
+//     console.log("Render gif ");
+//   }, []);
+
+//   return (
+//     <div onClick={(e) => this.props.handle(e)} >
+//       <img src={props.url} />
+//   </div>
+//   );
+// };
 
 export default Gif;

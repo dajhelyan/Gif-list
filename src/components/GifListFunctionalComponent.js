@@ -1,5 +1,27 @@
 import React, { useEffect, useState } from "react";
 import Gif from "./Gif";
+
+// Class component
+class GifList extends React.Component{
+  // constructor(){
+  //   super()
+  // }
+
+    render(){
+    return(
+      <div>
+       {this.props.listGif.map((url, index) => (
+         <div onClick={this.props.handle} key={index}>
+          < Gif  key={index} url={url} />
+         </div>
+       ))}
+     </div>
+    )
+  }
+}
+
+export default GifList;
+
 // Funtional component
 // const GifList = () => {
 //   const [array, setArray] = useState(dogsGifs);
@@ -16,22 +38,3 @@ import Gif from "./Gif";
 //     </div>
 //   );
 // };
-
-// Class component
-class GifList extends React.Component{
-  // constructor(){
-  //   super()
-  // }
-
-    render(){
-    return(
-      <div>
-       {this.props.listGif.map((url, index) => (
-         <Gif key={index} url={url} />
-       ))}
-     </div>
-    )
-  }
-}
-
-export default GifList;
