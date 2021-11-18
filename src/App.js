@@ -9,7 +9,7 @@ class App extends React.Component{
     super()
     this.state = {gifs: [],
     selectedGif: ""}
-    this.handleClick = this.handleClick.bind(this)
+    this.handleGif = this.handleGif.bind(this)
   }
 
   componentDidMount(){
@@ -18,7 +18,7 @@ class App extends React.Component{
     })
   }
 
-  handleClick(e){
+  handleGif(e){
     console.log('click on me', e.target.src);
     this.setState({
       selectedGif: e.target.src
@@ -35,7 +35,7 @@ class App extends React.Component{
         {/* pass tu Gif the url of selected gif  */}
         <Gif url={this.state.selectedGif.lenght === 0 ? "" : this.state.selectedGif}/>
       </div>
-      <GifList listGif={this.state.gifs} handle={this.handleClick}/>
+      <GifList listGif={this.state.gifs} handle={this.handleGif}/>
     </div>
     )
   }
